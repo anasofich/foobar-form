@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BeerOfTheMonth(props) {
+export default function BeerOfTheMonth() {
   let beerNumber = "";
   let beerName = "";
   let beerImg = "";

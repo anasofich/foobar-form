@@ -3,7 +3,7 @@ import MostOrdered from "./MostOrdered";
 import BeerOfTheMonth from "./BeerOfTheMonth";
 import RandomBeer from "./RandomBeer";
 
-export default function BeerSug(props) {
+export default function BeerSug() {
   return (
     <section className="BeerSugSec">
       <MostOrdered />

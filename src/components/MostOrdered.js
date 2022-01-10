@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MostOrdered(props) {
+export default function MostOrdered() {
   let beerNumber = "";
   let beerName = "";
   let beerImg = "";
