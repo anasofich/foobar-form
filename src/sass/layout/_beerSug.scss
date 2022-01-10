@@ -1,0 +1,57 @@
+@use "../base/variables";
+
+.BeerSugSec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.beerSugItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .popularImgWrapper {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 20rem;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  h1 {
+    font-family: variables.$font-2;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 1.9rem;
+    margin-top: -1.6rem;
+  }
+
+  button {
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #caabff;
+    font-family: variables.$font-1;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+
+    &:hover {
+      border: 2px solid #caabff;
+      background-color: #caabff;
+      color: white;
+    }
+  }
+}
