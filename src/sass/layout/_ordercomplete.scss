@@ -11,7 +11,7 @@
 .beer-right,
 .beer-left {
   height: 40rem;
-  animation-duration: 3.3s;
+  animation-duration: 2.2s;
   animation-iteration-count: infinite;
 }
 .beer-right {
@@ -90,7 +90,7 @@
 
 .serving {
   animation-name: serving;
-  animation-duration: 3.3s;
+  animation-duration: 2.2s;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
   transform-origin: bottom;
@@ -100,16 +100,16 @@
 }
 @keyframes serving {
   0% {
-    transform: translateY(15rem);
+    transform: translateY(7rem);
+  }
+  35% {
+    transform: translateY(0);
   }
   50% {
     transform: translateY(0);
   }
-  52% {
-    transform: translateY(0);
-  }
   100% {
-    transform: translateY(15rem);
+    transform: translateY(7rem);
   }
 }
 
