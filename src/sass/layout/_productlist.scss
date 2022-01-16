@@ -135,6 +135,27 @@ nav {
   }
 }
 
+/* FOR SOLD OUT PRODUCT */
+.soldOut {
+  position: absolute;
+  margin-left: 0.8rem;
+  margin-top: 0.8rem;
+  width: 4rem;
+  height: 4rem;
+  background: variables.$color5;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.1rem;
+  p {
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: black;
+  }
+}
+
 @media only screen and (max-width: 1373px) {
   .App {
     grid-template-columns: 79vw 21vw;

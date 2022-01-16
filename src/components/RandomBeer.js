@@ -5,7 +5,7 @@ export default function RandomBeer() {
   const [beerNumber, setNumber] = useState(Math.floor(Math.random() * 10) + 1);
   const [beerName, setBeerName] = useState("?");
   const [beerImg, setImg] = useState("../beer-images/random-can.webp");
-  const [background, setBackground] = useState("");
+  const [background, setBackground] = useState("linear-gradient(180deg, #E7E7E7 0%, rgba(255, 255, 255, 1) 100%)");
 
   function setNewNumber() {
     const newNumber = Math.floor(Math.random() * 10) + 1;

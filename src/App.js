@@ -11,6 +11,7 @@ function App() {
   const [basket, setBasket] = useState([]);
   const [orderID, setOrderID] = useState("0");
   const [tap, setTap] = useState([]);
+  const [soldOutTap, setSoldOut] = useState([]);
 
   useEffect(() => {
     Promise.all([fetch("https://foo-bar-database.herokuapp.com/").then((res) => res.json()), fetch("https://foo-bar-database.herokuapp.com/beertypes").then((res) => res.json())]).then((data) => {
@@ -24,16 +25,26 @@ function App() {
         }
         return false;
       });
+
+      const soldOutBeer = types.filter((type) => {
+        if (!workingTaps.includes(type.name)) {
+          return true;
+        }
+        return false;
+      });
+
       setTap(beerOnTap);
+      setSoldOut(soldOutBeer);
     });
   }, []);
 
   const productCopy = [...tap];
+  const soldOutProductCopy = [...soldOutTap];
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Wrapper tap={productCopy} basket={basket} />} />
+        <Route path="/" element={<Wrapper tap={productCopy} soldOutTap={soldOutProductCopy} basket={basket} />} />
         <Route path="/payment" element={<PaymentSection basket={basket} setBasket={setBasket} setOrderID={setOrderID} orderID={orderID} />} />
         <Route path="/ordercompleted" element={<OrderCompleted orderID={orderID} />} />
       </Routes>
@@ -41,10 +52,9 @@ function App() {
   );
 }
 const Wrapper = (props) => {
-  // console.log(props);
   return (
     <>
-      <ProductList products={props.tap} />
+      <ProductList products={props.tap} soldOutProducts={props.soldOutTap} />
       <Basket basket={props.basket} />
     </>
   );
