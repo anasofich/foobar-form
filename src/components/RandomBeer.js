@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 export default function RandomBeer() {
   //for updating the random beer when clicking on button
-  const [beerNumber, setNumber] = useState(1);
-  const [beerName, setBeerName] = useState("Mowintime");
-  const [beerImg, setImg] = useState("../beer-images/mowintime.png.webp");
-  const [background, setBackground] = useState("linear-gradient(180deg, #B8FCE1 0%, rgba(255, 255, 255, 1) 100%)");
+  const [beerNumber, setNumber] = useState(Math.floor(Math.random() * 10) + 1);
+  const [beerName, setBeerName] = useState("?");
+  const [beerImg, setImg] = useState("../beer-images/random-can.webp");
+  const [background, setBackground] = useState("");
 
   function setNewNumber() {
     const newNumber = Math.floor(Math.random() * 10) + 1;
@@ -109,7 +109,7 @@ export default function RandomBeer() {
         <img className="popularImg" src={beerImg} />
       </div>
       <h1>{beerName}</h1>
-      <button onClick={setNewNumber}>Change beer</button>
+      <button onClick={setNewNumber}>Get beer</button>
     </div>
   );
 }
